@@ -105,7 +105,10 @@ def main():
     args = parser.parse_args()
 
     config = dataset_configs[args.dataset]
+    '''
     output_path = os.path.join(get_root_dir(), "datasets", args.dataset)
+    '''
+    output_path = os.path.join(os.path.basename(), "datasets", args.dataset)
     process_huggingface_dataset(config, output_path,
                                 omit_unlabeled_data=args.omit_unlabeled_data == "1")
 
