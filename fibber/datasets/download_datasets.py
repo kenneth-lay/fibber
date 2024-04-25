@@ -32,7 +32,10 @@ if __name__ == "__main__":
     download_file(subdir="", **downloadable_dataset_urls["processed-datasets"])
 
     if args.verify == "1":
+        '''
         root_dir = get_root_dir()
+        '''
+        root_dir = path.basename()
         datasets_dir = os.path.join(root_dir, "datasets")
         dataset_json_list = sorted(glob.glob(datasets_dir + "/*/*.json"))
         for json_filename in dataset_json_list:
